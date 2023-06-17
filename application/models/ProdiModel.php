@@ -2,7 +2,7 @@
 
 class ProdiModel extends CI_Model
 {
-    private $tabel = "prodi_beasiswa";
+    private $tabel = "prodi";
 
     public function get_prodi()
     {
@@ -12,8 +12,7 @@ class ProdiModel extends CI_Model
     function insert_prodi()
     {
         $data = [
-            'nama_prodi' => $this->input->post('nama_prodi'),
-            'keterangan' => $this->input->post('keterangan')
+            'nama_prodi' => $this->input->post('nama_prodi')
         ];
 
         $this->db->insert($this->tabel, $data);
@@ -27,8 +26,7 @@ class ProdiModel extends CI_Model
     function update_prodi()
     {
         $data = [
-            'nama_prodi' => $this->input->post('nama_prodi'),
-            'keterangan' => $this->input->post('keterangan')
+            'nama_prodi' => $this->input->post('nama_prodi')
         ];
 
         $this->db->where('id', $this->input->post('id'));
