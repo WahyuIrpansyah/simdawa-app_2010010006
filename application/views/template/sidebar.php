@@ -15,39 +15,39 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2">
-                            <i class="fas fa-database"></i>Master Data</a>
+                            <i class="fa fa-database"></i>Master Data</a>
                         <div id="submenu-2" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo base_url('beasiswa') ?>">Beasiswa</span></a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url('jenis') ?>">Jenis Beasiswa</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url('persyaratan') ?>">Persyaratan</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url('pendaftaran') ?>">Pendaftaran Akun</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url('pengguna') ?>">Pengguna</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo base_url('prodi') ?>">Prodi</span></a>
-                                </li>
+                                <?php if ($this->session->userdata('peran') != 'USER') : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo base_url('jenis') ?>">Jenis Beasiswa</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo base_url('persyaratan') ?>">Persyaratan</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo base_url('pendaftaran') ?>">Pendaftaran Akun</a>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if ($this->session->userdata('peran') != 'ADMIN') : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo base_url('pengguna') ?>">Pengguna</a>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3">
-                            <i class="fas fa-archive"></i>Pengajuan Beasiswa</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-archive"></i>Pengajuan Beasiswa</a>
                         <div id="submenu-3" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo base_url('pengajuan') ?>">Pengajuan Keseluruhan</span></a>
                                 </li>
-                                <li class=" nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link" href="<?php echo base_url('pengajuan/diusulkan') ?>">Pengajuan Diusulkan</span></a>
                                 </li>
                                 <li class="nav-item">

@@ -10,6 +10,12 @@ class Prodi extends CI_Controller
         $this->load->model('ProdiModel');
     }
 
+    public function cetak()
+    {
+        $data['prodi'] = $this->ProdiModel->get_prodi();
+        $this->load->view('prodi/prodi_print', $data);
+    }
+
     public function index()
     {
         $data['title'] = "Dasboard | SIMDAWA-APP";
